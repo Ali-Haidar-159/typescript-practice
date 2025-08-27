@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <title>Registration Form</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <span class="pln">
+        </span><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"><span class="pln">
+        </span><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><span class="pln">
+        </span><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"><span class="pln">
+        </span>
+
+        <link rel="stylesheet" href="./style.css">
+        
+    </head>
+
+    <body>
+
+        <div id="mainDiv">
+
+            <div id="heading">
+                <h2 style="text-align: center; color: tomato;font-weight: bold; font-variant: small-caps;">User Registration Form</h2>
+            </div>
+
+            <div id="formDiv">
+
+                <form>
+
+                    <div id="emailDiv">
+                        <label for="email">Enter your mail : </label>
+                        <input type="email" name="email" id="email" placeholder="test@gmail.com">
+                    </div>
+
+                    <div id="passwordDiv">
+                        <label for="email">Enter your password : </label>
+                        <input type="password" name="password" id="password" placeholder="a-zA-Z0-9!#$">
+                    </div>
+
+                    <div id="countryDiv">
+                        <select name="country" id="country">
+                            <option value="bangladesh">Bangladesh</option>
+                            <option value="pakistan">Pakistan</option>
+                            <option value="dubai">Dubai</option>
+                        </select>
+                    </div>
+
+                    <div id="btnDiv">
+                        <button type="submit">Register</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- JS -->
+        <script src="../dist/index.js" ></script>
+        
+    </body>
+</html>
