@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <title>Registration Form</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <span class="pln">
+        </span><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"><span class="pln">
+        </span><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><span class="pln">
+        </span><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"><span class="pln">
+        </span>
+
+        <link rel="stylesheet" href="./style.css">
+        
+    </head>
+
+    <body>
+
+        <div id="mainDiv">
+
+            <div id="heading">
+                <h2 style="text-align: center; color: tomato;font-weight: bold; font-variant: small-caps;">Task Flow </h2>
+            </div>
+
+            <div id="formDiv">
+
+                <form id="myForm">
+
+                    <div id="titleDiv">
+                        <label for="title">Enter task title : </label>
+                        <input type="text" name="title" id="title" placeholder="title 1">
+                    </div>
+
+                    <div id="descriptionDiv">
+                        <label for="description">Enter description : </label>
+                        <input type="text" name="description" id="description" placeholder="This is task 1">
+                    </div>
+
+                    <div id="userDiv">
+                        <label for="user">Enter user name : </label>
+                        <input type="text" name="user" id="user" placeholder="Ali Haidar">
+                    </div>
+
+                    <div id="statusDiv">
+                        <select name="status" id="status">
+                            <option value="true">Completed</option>
+                            <option value="false">Not Completed</option>
+                        </select>
+                    </div>
+
+                    <div id="btnDiv">
+                        <button type="submit">Create</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- JS -->
+        <script type="module" src="/dist/index.js"></script>
+        
+    </body>
+</html>
