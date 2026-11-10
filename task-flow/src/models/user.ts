@@ -7,9 +7,9 @@ interface Task {
   id: string;
   title: string;
   description: string;
-  completed: boolean;
-
+  department: string;
+  status: string;
   user: User;
 }
 
-export type { Task }; // Task is a type . so i have to say explicitly when i export it. so i use -> export type
+export type { Task };

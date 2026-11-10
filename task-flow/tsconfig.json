@@ -5,11 +5,10 @@
     "outDir": "./dist",
 
     // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "ES2020",
-    "moduleResolution": "bundler",
+    "module": "es6",
     "target": "es6",
-    "types": ["node"],
+    "types": [],
+
 
     // Other Outputs
     "sourceMap": true,
@@ -37,6 +36,7 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "include" : ["./src"],
-  "files" : ["./src/index.ts"]
+  "include":["./src"],
+  "files":["./src/index.ts"],
+
 }

@@ -1,28 +1,31 @@
-import type { Task } from "./model/task";
+import type { Task } from "./models/user";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("myForm");
-  if (!(form instanceof HTMLFormElement)) {
-    throw new Error("Could not find the task form.");
-  }
+document.addEventListener("DOMContentLoaded", function (e: Event): void {
+  const taskForm: HTMLFormElement = document.getElementById(
+    "task-form",
+  ) as HTMLFormElement;
 
-  form.addEventListener("submit", async (e: SubmitEvent) => {
-    e.preventDefault();
-    const formData = new FormData(form);
+  taskForm.addEventListener("submit", function (ee: SubmitEvent) {
+    ee.preventDefault();
+    const form = new FormData(taskForm);
 
-    const titleValue = formData.get("title");
-    const descriptionValue = formData.get("description");
-    const userValue = formData.get("user");
-    const statusValue = formData.get("status");
+    const id = Date.now().toString();
+    const titleValue = form.get("title");
+    const descriptionValue = form.get("description");
+    const departmentValue = form.get("department");
+    const userValue = form.get("user");
+    const statusValue = form.get("status");
 
-    console.log(titleValue);
-    console.log(descriptionValue);
-    console.log(userValue);
-    console.log(statusValue);
+    // console.log(id);
+    // console.log(titleValue);
+    // console.log(descriptionValue);
+    // console.log(userValue);
+    // console.log(statusValue);
 
     if (
       typeof titleValue !== "string" ||
       typeof descriptionValue !== "string" ||
+      typeof departmentValue !== "string" ||
       typeof userValue !== "string" ||
       (statusValue !== "true" && statusValue !== "false")
     ) {
@@ -30,31 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const task: Task = {
-      id: Date.now().toString(),
+      id,
       title: titleValue,
       description: descriptionValue,
+      department: departmentValue,
+      status: statusValue,
       user: {
         id: `user_${Date.now().toString()}`,
         name: userValue,
       },
-      completed: statusValue === "true",
     };
 
-    try {
-      const response = await fetch("/tasks", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(task),
-      });
-
-      if (!response.ok) {
-        throw new Error("The server could not save the task.");
-      }
-
-      form.reset();
-    } catch (error) {
-      console.error("Failed to save task:", error);
-      alert("Could not save the task. Please try again.");
-    }
+    taskForm.reset();
   });
 });
