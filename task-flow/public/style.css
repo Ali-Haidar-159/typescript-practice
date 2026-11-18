@@ -171,6 +171,23 @@ button:hover {
   overflow-wrap: anywhere;
 }
 
+.task-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.task-action {
+  margin-bottom: 0;
+}
+
+.task-action--delete,
+.task-action--delete:hover,
+.task-action--delete:focus {
+  background-color: #b33a3a;
+  border-color: #b33a3a;
+}
+
 @media (max-width: 600px) {
   .container {
     padding-top: 3rem;
